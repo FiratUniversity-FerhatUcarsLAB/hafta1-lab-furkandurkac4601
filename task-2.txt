@@ -1,4 +1,32 @@
-Öğrenci No:
-AD-SOYAD:
+Öğrenci No:250541045  
+AD-SOYAD:Furkan Durkaç
 
 Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
+
+Başla
+    GizliSayiyiBelirle(alt_limit, üst_limit)
+    KullaniciTahminiYap = False
+    
+    while KullaniciTahminiYap == False:
+        Tahmin = KullaniciGirdisiAl(alt_limit, üst_limit)
+        
+        if Tahmin < GizliSayi:
+            Yaz("Tahmininiz düşük. Daha yüksek bir sayı tahmin edin.")
+            alt_limit = Tahmin + 1  // Alt sınırı güncelle
+        else if Tahmin > GizliSayi:
+            Yaz("Tahmininiz yüksek. Daha düşük bir sayı tahmin edin.")
+            üst_limit = Tahmin - 1  // Üst sınırı güncelle
+        else:
+            Yaz("Tebrikler! Doğru tahmin ettiniz.")
+            KullaniciTahminiYap = True
+        
+        // Kullanıcının tekrar tahmin yapmak isteyip istemediğini kontrol et
+        if KullaniciDevamEtmekIsterMi():
+            continue
+        else:
+            KullaniciTahminiYap = True  // Oyun sona eriyor
+
+Bitiş
+
+//
+Sayı tahmin oyununda optimal strateji algoritması için adım adım algoritma geliştirmek istiyorum. Koşullu durumları ve tekrar eden işlemleri de içeren detaylı bir pseudocode yazmama yardım eder misin?
