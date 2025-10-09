@@ -1,4 +1,73 @@
-Öğrenci No:
-AD-SOYAD:
+Öğrenci No:250541045
+AD-SOYAD:furkan durkaç
 
 Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
+
+ALGORİTMA Mükemmel_Omlet_Yap()
+
+    DEĞİŞKENLER:
+        yumurta_sayisi ← 3
+        tuz_miktari ← 1 çay kaşığı
+        süt_miktari ← 2 yemek kaşığı
+        yag_miktari ← 1 yemek kaşığı
+        tava_sicakligi ← 0
+        pisirme_suresi ← 0
+        omlet_hazir ← FALSE
+
+    BAŞLA:
+
+    // 1. Malzemeleri kontrol et
+    EĞER yumurta_sayisi < 2 İSE
+        YAZ "Yeterli yumurta yok. Omlet yapılamaz."
+        DUR
+    SON
+
+    // 2. Yumurtaları kır ve karıştır
+    YAZ "Yumurtalar karıştırılıyor..."
+    yumurta_karisimi ← yumurta_sayisi + tuz_miktari + süt_miktari
+
+    // 3. Tava ısıtma
+    YAZ "Tava ısıtılıyor..."
+    TAVA_ISINANA_KADAR:
+        tava_sicakligi ← tava_sicakligi + 10
+        BEKLE(5 saniye)
+        EĞER tava_sicakligi ≥ 100 İSE
+            ÇIK // tava yeterince sıcak
+        SON
+    SON_DÖNGÜ
+
+    // 4. Yağı ekle
+    YAZ "Tavaya yağ ekleniyor..."
+    EKLE(yag_miktari)
+
+    // 5. Karışımı dök
+    YAZ "Karışım tavaya dökülüyor..."
+    DÖK(yumurta_karisimi)
+
+    // 6. Pişirme aşaması
+    YAZ "Omlet pişiriliyor..."
+    WHILE omlet_hazir = FALSE YAP
+        pisirme_suresi ← pisirme_suresi + 1
+        BEKLE(10 saniye)
+
+        EĞER pisirme_suresi > 5 VE tava_sicakligi > 120 İSE
+            YAZ "Dikkat! Omlet yanmak üzere!"
+            tava_sicakligi ← tava_sicakligi - 20
+        SON
+
+        EĞER pisirme_suresi = 6 İSE
+            YAZ "Omletin altı pişti, ters çeviriliyor..."
+            CEViR(omlet)
+        SON
+
+        EĞER pisirme_suresi ≥ 10 İSE
+            omlet_hazir ← TRUE
+        SON
+    SON_DÖNGÜ
+
+    // 7. Servis et
+    YAZ "Omlet hazır! Afiyet olsun 🍽️"
+
+BİTİR
+
+//Mükemmel omlet yapma algoritması için adım adım algoritma geliştirmek istiyorum. Koşullu durumları ve tekrar eden işlemleri de içeren detaylı bir pseudocode yazmama yardım eder misin?
