@@ -1,4 +1,43 @@
-Öğrenci No:
-AD-SOYAD:
+Öğrenci No:250541045
+AD-SOYAD:Furkan Durkaç
 
 Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
+
+Başla
+    KitapListesiniYukle()  // Kütüphanedeki tüm kitapları yükle
+    KullaniciAramaYap = True
+    
+    while KullaniciAramaYap == True:
+        Yaz("Lütfen aramak istediğiniz kitabın adını veya yazarını girin:")
+        AramaTerimi = KullaniciGirdisiAl()
+        
+        // Kitapları arama
+        SonucListesi = KitapAra(KitapListesi, AramaTerimi)
+        
+        if SonucListesi.boş değil ise:
+            Yaz("Bulunan kitaplar:")
+            for her kitap in SonucListesi:
+                Yaz(kitap.ad + " - " + kitap.yazar)
+        else:
+            Yaz("Aramanıza uygun kitap bulunamadı.")
+        
+        // Kullanıcının tekrar arama yapmak isteyip istemediğini kontrol et
+        if KullaniciDevamEtmekIsterMi():
+            continue
+        else:
+            KullaniciAramaYap = False  // Arama sona eriyor
+
+Bitiş
+
+
+Fonksiyon KitapAra(KitapListesi, AramaTerimi):
+    SonucListesi = BoşListe()
+    
+    for her kitap in KitapListesi:
+        if AramaTerimi kitap.ad içinde veya AramaTerimi kitap.yazar içinde ise:
+            SonucListesi.Ekle(kitap)
+    
+    return SonucListesi
+
+//
+Kütüphanede kitap arama sistemi algoritması için adım adım algoritma geliştirmek istiyorum. Koşullu durumları ve tekrar eden işlemleri de içeren detaylı bir pseudocode yazmama yardım eder misin?
