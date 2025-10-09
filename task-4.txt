@@ -3,37 +3,29 @@ AD-SOYAD:Furkan Durkaç
 
 Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
 
-Başla
-    OtobusListesiniYukle()  // Kütüphanedeki tüm otobüsleri yükle
-    KullaniciTakipYap = True
-    
-    while KullaniciTakipYap == True:
-        Yaz("Lütfen takip etmek istediğiniz otobüsün numarasını girin:")
-        OtobusNo = KullaniciGirdisiAl()
-        
-        Otobus = OtobusBul(OtobusListesi, OtobusNo)
-        
-        if Otobus != Boş:
-            Yaz("Otobüs " + OtobusNo + " şu anda şu konumda: " + Otobus.konum)
-            Yaz("Otobüsün tahmini varış süresi: " + Otobus.tahmini_varis_suresi + " dakika.")
-        else:
-            Yaz("Bu numaraya ait bir otobüs bulunamadı.")
-        
-        // Kullanıcının tekrar takip yapmak isteyip istemediğini kontrol et
-        if KullaniciDevamEtmekIsterMi():
-            continue
-        else:
-            KullaniciTakipYap = False  // Takip sona eriyor
+1. Başla
+2. Gerekli parçaları tanımla
+   - Parça_listesi = [parça1, parça2, parça3, ...]
+3. Hedef şekli tanımla
+   - Hedef_şekil = [şekil_detayları]
+4. Mevcut şekli başlat
+   - Mevcut_şekil = []
+5. Her parça için:
+   5.1. Eğer Parça_listesi boş değilse:
+       - Parça = Parça_listesi'nden ilk parçayı al
+       - Parça_listesi'nden Parça'yı kaldır
+   5.2. Hedef şekli kontrol et:
+       - Eğer Parça Hedef_şekil'in bir parçasıysa:
+           - Mevcut_şekil'e Parça ekle
+           - Hedef_şekil'i güncelle (Hedef_şekil'den Parça'yı çıkar)
+       - Aksi takdirde:
+           - Parçayı geri ekle (Parça_listesi'ne ekle)
+           - Hedef_şekil ile Mevcut_şekil'i kontrol et
+   5.3. Eğer Hedef_şekil tamamen oluşturulmuşsa:
+       - "Şekil başarıyla oluşturuldu!" mesajını göster
+       - Algoritmayı bitir
+6. Eğer Parça_listesi boşsa:
+   - "Parçalar bitti, şekil oluşturulamadı!" mesajını göster
+7. Algoritmayı bitir
 
-Bitiş
-
-
-Fonksiyon OtobusBul(OtobusListesi, OtobusNo):
-    for her otobus in OtobusListesi:
-        if otobus.no == OtobusNo:
-            return otobus  // Otobüsü bulursa döndür
-    
-    return Boş  // Otobüs bulunamazsa
-
-//
-otobüs takip sistemi algoritması için adım adım algoritma geliştirmek istiyorum. Koşullu durumları ve tekrar eden işlemleri de içeren detaylı bir pseudocode yazmama yardım eder misin?
+//Lego ile belirli şekil yapma planı algoritması için adım adım algoritma geliştirmek istiyorum. Koşullu durumları ve tekrar eden işlemleri de içeren detaylı bir pseudocode yazmama yardım eder misin?
